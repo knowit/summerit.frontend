@@ -9,18 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var mock_heroes_1 = require('./mock-heroes');
-var HeroService = (function () {
-    function HeroService() {
+var TrainsMapComponent = (function () {
+    function TrainsMapComponent() {
     }
-    HeroService.prototype.getHeroes = function () {
-        return Promise.resolve(mock_heroes_1.HEROES);
-    };
-    HeroService = __decorate([
-        core_1.Injectable(), 
+    TrainsMapComponent = __decorate([
+        core_1.Component({
+            selector: 'trains-map',
+            template: "\n\t<div class=\"trains-map\"></div>\n\t"
+        }), 
         __metadata('design:paramtypes', [])
-    ], HeroService);
-    return HeroService;
+    ], TrainsMapComponent);
+    return TrainsMapComponent;
 }());
-exports.HeroService = HeroService;
-//# sourceMappingURL=hero.service.js.map
+exports.TrainsMapComponent = TrainsMapComponent;
+//# sourceMappingURL=trains-map.component.js.map

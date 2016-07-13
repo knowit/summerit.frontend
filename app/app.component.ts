@@ -1,35 +1,37 @@
 import { Component } from '@angular/core';
-import { Hero } from './hero';
-import { HeroDetailComponent } from './hero-detail.component';
+import { Train } from './train';
+import { TrainDetailComponent } from './train-detail.component';
+import { TrainsMapComponent } from './trains-map.component';
 import { OnInit } from '@angular/core';
-import { HeroService } from './hero.service'
+import { TrainService } from './train.service';
 
 @Component({
   selector: 'my-app',
   template: `
     <h1>{{title}}</h1>
-    <h2>My Heroes</h2>
-    <ul class="heroes">
-      <li *ngFor="let hero of heroes"
-        [class.selected]="hero === selectedHero"
-        (click)="onSelect(hero)">
-        <span class="badge">{{hero.id}}</span> {{hero.name}}
+    <h2>My Trains</h2>
+    <ul class="trains">
+      <li *ngFor="let train of trains"
+        [class.selected]="train === selectedTrain"
+        (click)="onSelect(train)">
+        <span class="badge">{{train.id}}</span> {{train.name}}
       </li>
     </ul>
-    <my-hero-detail [hero]="selectedHero"></my-hero-detail>
+    <my-train-detail [train]="selectedTrain"></my-train-detail>
+    <trains-map></trains-map>
   `,
   styles: [`
     .selected {
       background-color: #CFD8DC !important;
       color: white;
     }
-    .heroes {
+    .trains {
       margin: 0 0 2em 0;
       list-style-type: none;
       padding: 0;
       width: 15em;
     }
-    .heroes li {
+    .trains li {
       cursor: pointer;
       position: relative;
       left: 0;
@@ -39,20 +41,20 @@ import { HeroService } from './hero.service'
       height: 1.6em;
       border-radius: 4px;
     }
-    .heroes li.selected:hover {
+    .trains li.selected:hover {
       background-color: #BBD8DC !important;
       color: white;
     }
-    .heroes li:hover {
+    .trains li:hover {
       color: #607D8B;
       background-color: #DDD;
       left: .1em;
     }
-    .heroes .text {
+    .trains .text {
       position: relative;
       top: -3px;
     }
-    .heroes .badge {
+    .trains .badge {
       display: inline-block;
       font-size: small;
       color: white;
@@ -67,26 +69,26 @@ import { HeroService } from './hero.service'
       border-radius: 4px 0 0 4px;
     }
   `],
-  directives: [HeroDetailComponent],
-  providers: [HeroService]
+  directives: [TrainDetailComponent, TrainsMapComponent],
+  providers: [TrainService]
 
 })
 export class AppComponent  implements OnInit {
-  constructor(private heroService: HeroService) { }
-    getHeroes() {
-      this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+  constructor(private trainService: TrainService) { }
+    getTrains() {
+      this.trainService.getTrains().then(trains => this.trains = trains);
     }
 
   ngOnInit() {
-    this.getHeroes();
+    this.getTrains();
   }
 
 
 
 
-  title = 'Tour of Heroes';
-  heroes: Hero[];
-  selectedHero: Hero;
-  onSelect(hero: Hero) { this.selectedHero = hero; }
+  title = 'Tour of Trains';
+  trains: Train[];
+  selectedTrain: Train;
+  onSelect(train: Train) { this.selectedTrain = train; }
 }
 
