@@ -1,7 +1,7 @@
 import { provideRouter, RouterConfig }  from '@angular/router';
-import { TrainsComponent } from './trains.component';
-import { DashboardComponent } from './dashboard.component';
-import { TrainDetailComponent } from './train-detail.component';
+import { TrainsComponent } from './components/trains/trains.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { TrainDetailComponent } from './components/train-detail/train-detail.component';
 
 const routes: RouterConfig = [
   {

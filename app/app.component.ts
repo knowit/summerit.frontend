@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
-import { TrainService } from './train.service';
+import { TrainService } from './services/train.service';
 
 
 @Component({

@@ -1,8 +1,8 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { TrainService } from './train.service';
-import { Train } from './train';
+import { TrainService } from '../../services/train.service';
+import { Train } from '../../models/train';
 
 @Component({
   selector: 'my-train-detail',

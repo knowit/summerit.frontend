@@ -1,8 +1,8 @@
 "use strict";
 var router_1 = require('@angular/router');
-var trains_component_1 = require('./trains.component');
-var dashboard_component_1 = require('./dashboard.component');
-var train_detail_component_1 = require('./train-detail.component');
+var trains_component_1 = require('./components/trains/trains.component');
+var dashboard_component_1 = require('./components/dashboard/dashboard.component');
+var train_detail_component_1 = require('./components/train-detail/train-detail.component');
 var routes = [
     {
         path: 'dashboard',
