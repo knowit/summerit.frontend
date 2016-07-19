@@ -11,32 +11,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var train_service_1 = require('./train.service');
-var TrainDetailComponent = (function () {
-    function TrainDetailComponent(trainService, route) {
+var TrainsComponent = (function () {
+    function TrainsComponent(router, trainService) {
+        this.router = router;
         this.trainService = trainService;
-        this.route = route;
+        this.title = 'Togdetaljer';
     }
-    TrainDetailComponent.prototype.ngOnInit = function () {
+    TrainsComponent.prototype.getTrains = function () {
         var _this = this;
-        this.sub = this.route.params.subscribe(function (params) {
-            var id = +params['id'];
-            _this.trainService.getTrain(id).then(function (train) { return _this.train = train; });
-        });
+        this.trainService.getTrains().then(function (trains) { return _this.trains = trains; });
     };
-    TrainDetailComponent.prototype.ngOnDestroy = function () {
-        this.sub.unsubscribe();
+    TrainsComponent.prototype.ngOnInit = function () {
+        this.getTrains();
     };
-    TrainDetailComponent.prototype.goBack = function () {
-        window.history.back();
+    TrainsComponent.prototype.onSelect = function (train) { this.selectedTrain = train; };
+    TrainsComponent.prototype.gotoDetail = function () {
+        this.router.navigate(['/detail', this.selectedTrain.id]);
     };
-    TrainDetailComponent = __decorate([
+    TrainsComponent = __decorate([
         core_1.Component({
-            selector: 'my-train-detail',
-            templateUrl: 'app/train-detail.component.html'
+            selector: 'my-trains',
+            templateUrl: 'app/trains.component.html',
+            styleUrls: ['app/trains.component.css']
         }), 
-        __metadata('design:paramtypes', [train_service_1.TrainService, router_1.ActivatedRoute])
-    ], TrainDetailComponent);
-    return TrainDetailComponent;
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, train_service_1.TrainService])
+    ], TrainsComponent);
+    return TrainsComponent;
 }());
-exports.TrainDetailComponent = TrainDetailComponent;
-//# sourceMappingURL=train-detail.component.js.map
+exports.TrainsComponent = TrainsComponent;
+//# sourceMappingURL=trains.component.js.map

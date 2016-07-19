@@ -1,22 +1,37 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { TrainService } from './train.service';
 import { Train } from './train';
 
 @Component({
   selector: 'my-train-detail',
-  template: `
-    <div *ngIf="train">
-      <h2>{{train.name}} details!</h2>
-      <div><label>id: </label>{{train.id}}</div>
-      <div>
-        <label>name: </label>
-        <input [(ngModel)]="train.name" placeholder="name"/>
-      </div>
-      <div><label>wall: </label>{{train.raspberrypi}}</div>
-      <div><label>distance: </label>{{train.distance}}</div>
-    </div>
-  `
+  templateUrl: 'app/train-detail.component.html'
 })
-export class TrainDetailComponent {
-  @Input()
+export class TrainDetailComponent implements OnInit, OnDestroy {
+
   train: Train;
+  sub: any;
+
+  constructor(
+    private trainService: TrainService,
+    private route: ActivatedRoute) {
+  }
+
+  ngOnInit() {
+    this.sub = this.route.params.subscribe(params => {
+      let id = +params['id'];
+      this.trainService.getTrain(id).then(train => this.train = train);
+    });
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
+
+  goBack() {
+    window.history.back();
+  }
+
+
 }

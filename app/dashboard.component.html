@@ -1,0 +1,8 @@
+<h3>Top tog</h3>
+<div class="grid grid-pad">
+  <div *ngFor="let train of trains" (click)="gotoDetail(train)" class="col-1-4">
+    <div class="module train">
+      <h4>{{train.name}}</h4>
+    </div>
+  </div>
+</div>

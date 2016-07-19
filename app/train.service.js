@@ -16,6 +16,9 @@ var TrainService = (function () {
     TrainService.prototype.getTrains = function () {
         return Promise.resolve(mock_trains_1.TRAINS);
     };
+    TrainService.prototype.getTrain = function (id) {
+        return this.getTrains().then(function (trains) { return trains.find(function (train) { return train.id === id; }); });
+    };
     TrainService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])
