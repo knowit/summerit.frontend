@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { Train } from './train';
 import { TrainDetailComponent } from './train-detail.component';
 import { TrainsMapComponent } from './trains-map.component';
@@ -19,7 +19,7 @@ export class TrainsComponent implements OnInit {
   title = 'Togdetaljer';
 
   
-  constructor(private router: ActivatedRoute, private trainService: TrainService) { }
+  constructor(private router: Router, private trainService: TrainService) { }
   
   getTrains() {
     this.trainService.getTrains().then(trains => this.trains = trains);

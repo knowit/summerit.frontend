@@ -34,7 +34,7 @@ var TrainsComponent = (function () {
             templateUrl: 'app/trains.component.html',
             styleUrls: ['app/trains.component.css']
         }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute, train_service_1.TrainService])
+        __metadata('design:paramtypes', [router_1.Router, train_service_1.TrainService])
     ], TrainsComponent);
     return TrainsComponent;
 }());
