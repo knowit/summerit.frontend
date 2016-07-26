@@ -32,7 +32,7 @@ var TrainDetailComponent = (function () {
     TrainDetailComponent = __decorate([
         core_1.Component({
             selector: 'my-train-detail',
-            templateUrl: 'app/train-detail.component.html'
+            templateUrl: 'app/components/train-detail/train-detail.component.html'
         }), 
         __metadata('design:paramtypes', [train_service_1.TrainService, router_1.ActivatedRoute])
     ], TrainDetailComponent);

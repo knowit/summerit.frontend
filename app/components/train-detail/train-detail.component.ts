@@ -6,7 +6,7 @@ import { Train } from '../../models/train';
 
 @Component({
   selector: 'my-train-detail',
-  templateUrl: 'app/train-detail.component.html'
+  templateUrl: 'app/components/train-detail/train-detail.component.html'
 })
 export class TrainDetailComponent implements OnInit, OnDestroy {
 
