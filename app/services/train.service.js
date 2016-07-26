@@ -9,19 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var mock_trains_1 = require('../mock-trains');
+var http_1 = require('@angular/http');
 var TrainService = (function () {
-    function TrainService() {
+    function TrainService(http) {
+        this.http = http;
+        this.trainsUrl = 'http://knowit.filip0.com/trains';
     }
     TrainService.prototype.getTrains = function () {
-        return Promise.resolve(mock_trains_1.TRAINS);
+        return this.http.get(this.trainsUrl)
+            .toPromise()
+            .then(function (response) { return response.json().data; })
+            .catch(this.handleError);
     };
     TrainService.prototype.getTrain = function (id) {
-        return this.getTrains().then(function (trains) { return trains.find(function (train) { return train.id === id; }); });
+        return this.getTrains()
+            .then(function (trains) { return trains.find(function (train) { return train.id === id; }); });
     };
     TrainService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_1.Http])
     ], TrainService);
     return TrainService;
 }());
