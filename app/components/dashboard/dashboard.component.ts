@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
   trains: Train[] = [];
   constructor(private trainService: TrainService, private router: Router) { }
   ngOnInit() {
-    this.trainService.getTrains().then(trains => this.trains = trains.slice(1, 5));
+    this.trainService.getTrains().then(trains => this.trains = trains.slice(0, 3));
   }
   gotoDetail(train: Train) {
   	let link = ['/detail', train.id];
