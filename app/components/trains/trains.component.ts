@@ -8,8 +8,8 @@ import { TrainService } from '../../services/train.service';
 
 @Component({
   selector: 'my-trains',
-  templateUrl: 'app/trains.component.html',
-  styleUrls: ['app/trains.component.css']
+  templateUrl: 'app/components/trains/trains.component.html',
+  styleUrls: ['app/components/trains/trains.component.css']
 })
 
 export class TrainsComponent implements OnInit {

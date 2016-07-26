@@ -31,8 +31,8 @@ var TrainsComponent = (function () {
     TrainsComponent = __decorate([
         core_1.Component({
             selector: 'my-trains',
-            templateUrl: 'app/trains.component.html',
-            styleUrls: ['app/trains.component.css']
+            templateUrl: 'app/components/trains/trains.component.html',
+            styleUrls: ['app/components/trains/trains.component.css']
         }), 
         __metadata('design:paramtypes', [router_1.Router, train_service_1.TrainService])
     ], TrainsComponent);
