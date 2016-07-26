@@ -1,0 +1,11 @@
+<div *ngIf="train">
+  <h2>{{train.name}} detaljer!</h2>
+  <div><label>id: </label>{{train.id}}</div>
+  <div>
+    <label>navn: </label>
+    <input [(ngModel)]="train.name" placeholder="name"/>
+  </div>
+  <div><label>vegg: </label>{{train.raspberrypi}}</div>
+  <div><label>avstand: </label>{{train.distance}}</div>
+  <button (click)="goBack()">Back</button>
+</div>

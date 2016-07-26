@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Train } from './train';
+import { Train } from '../../models/train';
 
 @Component({
 	selector: 'trains-map',

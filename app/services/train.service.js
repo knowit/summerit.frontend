@@ -9,12 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var mock_trains_1 = require('./mock-trains');
+var mock_trains_1 = require('../mock-trains');
 var TrainService = (function () {
     function TrainService() {
     }
     TrainService.prototype.getTrains = function () {
         return Promise.resolve(mock_trains_1.TRAINS);
+    };
+    TrainService.prototype.getTrain = function (id) {
+        return this.getTrains().then(function (trains) { return trains.find(function (train) { return train.id === id; }); });
     };
     TrainService = __decorate([
         core_1.Injectable(), 

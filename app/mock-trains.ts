@@ -1,4 +1,4 @@
-import { Train } from './train';
+import { Train } from './models/train';
 
 
 
