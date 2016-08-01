@@ -3,9 +3,8 @@ import { Train } from '../../models/train';
 
 @Component({
 	selector: 'trains-map',
-	template:`
-	<div class="trains-map"></div>
-	`
+	templateUrl:'app/components/trains-map/trains-map.component.html',
+	styleUrls: ['app/components/trains-map/trains-map.component.css']
 })
 
 export class TrainsMapComponent {
