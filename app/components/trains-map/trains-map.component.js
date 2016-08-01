@@ -15,7 +15,8 @@ var TrainsMapComponent = (function () {
     TrainsMapComponent = __decorate([
         core_1.Component({
             selector: 'trains-map',
-            template: "\n\t<div class=\"trains-map\"></div>\n\t"
+            templateUrl: 'app/components/trains-map/trains-map.component.html',
+            styleUrls: ['app/components/trains-map/trains-map.component.css']
         }), 
         __metadata('design:paramtypes', [])
     ], TrainsMapComponent);

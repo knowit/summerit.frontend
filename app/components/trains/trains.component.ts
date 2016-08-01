@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Train } from '../../models/train';
 import { TrainDetailComponent } from '../../components/train-detail/train-detail.component';
-import { TrainsMapComponent } from '../train-map/trains-map.component';
 import { TrainService } from '../../services/train.service';
 
 

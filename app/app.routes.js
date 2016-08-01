@@ -3,6 +3,7 @@ var router_1 = require('@angular/router');
 var trains_component_1 = require('./components/trains/trains.component');
 var dashboard_component_1 = require('./components/dashboard/dashboard.component');
 var train_detail_component_1 = require('./components/train-detail/train-detail.component');
+var trains_map_component_1 = require('./components/trains-map/trains-map.component');
 var routes = [
     {
         path: 'dashboard',
@@ -20,6 +21,10 @@ var routes = [
     {
         path: 'trains',
         component: trains_component_1.TrainsComponent
+    },
+    {
+        path: 'trains-map',
+        component: trains_map_component_1.TrainsMapComponent
     }
 ];
 exports.appRouterProviders = [

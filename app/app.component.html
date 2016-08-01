@@ -1,0 +1,7 @@
+<h1>{{title}}</h1>
+    <nav>
+      <a [routerLink]="['/dashboard']" routerLinkActive="active">Dashboard</a>
+      <a [routerLink]="['/trains']" routerLinkActive="active">Tog</a>
+      <a [routerLink]="['/trains-map']" routerLinkActive="active">Kart</a>
+    </nav>
+    <router-outlet></router-outlet>
