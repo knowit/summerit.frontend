@@ -4,7 +4,7 @@
   <li *ngFor="let train of trains"
     [class.selected]="train === selectedTrain"
     (click)="onSelect(train)">
-    <span class="badge">{{train.id}}</span> {{train.name}}
+    <span [ngClass]="train.status==true? ['badge', 'here'] : 'badge'">{{train.id}}</span> {{train.name}}
   </li>
 </ul>
 <div *ngIf="selectedTrain">
