@@ -1,8 +1,10 @@
-<h3>Top tog</h3>
+<h3>Tog på verkstedet nå</h3>
 <div class="grid grid-pad">
-  <div *ngFor="let train of trains" (click)="gotoDetail(train)" class="col-1-4">
-    <div class="module train">
-      <h4>{{train.name}}</h4>
+  <div *ngFor="let train of trains">
+    <div *ngIf="train.status == true" (click)="gotoDetail(train)" class="col-1-4">
+      <div class="module train">
+        <h4>{{train.name}}</h4>
+      </div>
     </div>
   </div>
 </div>

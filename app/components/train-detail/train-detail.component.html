@@ -5,10 +5,7 @@
     <label>navn: </label>
     <input [(ngModel)]="train.name" placeholder="name"/>
   </div>
-  <div><label>Uuid: </label>{{train.uuid}}</div>
-  <div><label>Lat: </label>{{train.lat}}</div>  
-  <div><label>Lng: </label>{{train.lng}}</div>
-  <div><label>Opprettet: </label>{{train.created_at | date: "dd. MMM yyyy" }}</div>
   <div><label>Oppdatert: </label>{{train.updated_at | date: "dd. MMM yyyy" }}</div>
+  <div><label>Status: </label><status *ngIf="train.status == true">På verkstedet</status><status *ngIf="train.status == false">Ikke på verkstedet</status></div>
   <button (click)="goBack()">Back</button>
 </div>
