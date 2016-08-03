@@ -19,7 +19,7 @@ var DashboardComponent = (function () {
     }
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.trainService.getTrains().then(function (trains) { return _this.trains = trains.slice(0, 3); });
+        this.trainService.getTrains().then(function (trains) { return _this.trains = trains; });
     };
     DashboardComponent.prototype.gotoDetail = function (train) {
         var link = ['/detail', train.id];

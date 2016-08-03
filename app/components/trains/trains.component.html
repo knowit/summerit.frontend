@@ -4,12 +4,15 @@
   <li *ngFor="let train of trains"
     [class.selected]="train === selectedTrain"
     (click)="onSelect(train)">
-    <span class="badge">{{train.id}}</span> {{train.name}}
+    <span [ngClass]="train.status==true? ['badge', 'here'] : 'badge'">{{train.id}}</span> {{train.name}}
   </li>
 </ul>
 <div *ngIf="selectedTrain">
-  <h2>
-    {{selectedTrain.name}} er det beste toget
+  <h2 *ngIf="selectedTrain.status == false">
+    {{selectedTrain.name}} er ikke på verkstedet!
+  </h2>
+  <h2 *ngIf="selectedTrain.status == true">
+    {{selectedTrain.name}} er på verkstedet!
   </h2>
   <button (click)="gotoDetail()">Se detaljer</button>
 </div>
