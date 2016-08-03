@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var train_service_1 = require('../../services/train.service');
 var router_1 = require('@angular/router');
-var angular2_grid_1 = require('angular2-grid');
 var DashboardComponent = (function () {
     function DashboardComponent(trainService, router) {
         this.trainService = trainService;
@@ -31,7 +30,6 @@ var DashboardComponent = (function () {
             selector: 'my-dashboard',
             templateUrl: 'app/components/dashboard/dashboard.component.html',
             styleUrls: ['app/components/dashboard/dashboard.component.css'],
-            directives: [angular2_grid_1.NgGrid, angular2_grid_1.NgGridItem]
         }), 
         __metadata('design:paramtypes', [train_service_1.TrainService, router_1.Router])
     ], DashboardComponent);

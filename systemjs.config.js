@@ -9,16 +9,28 @@
     '@angular':                   'node_modules/@angular',
     'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
     'rxjs':                       'node_modules/rxjs',
-    'angular2-grid': 'node_modules/angular2-grid/dist'
-
+    '@angular2-material': 'node_modules/@angular2-material',
+    '@angular2-material/core': {
+      format: 'cjs',
+      defaultExtension: 'js',
+      main: 'core.js'
+    },
+    '@angular2-material/grid-list': {
+      format: 'cjs',
+      defaultExtension: 'js',
+      main: 'grid-list.js'
+    },
+    '@angular2-material/button': {
+      format: 'cjs',
+      defaultExtension: 'js',
+      main: 'button.js'
+    }
   };
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
     'app':                        { main: 'main.js',  defaultExtension: 'js' },
     'rxjs':                       { defaultExtension: 'js' },
-    'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
-    'angular2-grid': { main: 'main.js',  defaultExtension: 'js' }
-
+    'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' }
   };
   var ngPackageNames = [
     'common',
@@ -31,6 +43,7 @@
     'router',
     'router-deprecated',
     'upgrade',
+    'grid-list'
   ];
   // Individual files (~300 requests):
   function packIndex(pkgName) {
