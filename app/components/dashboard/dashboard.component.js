@@ -29,7 +29,7 @@ var DashboardComponent = (function () {
         core_1.Component({
             selector: 'my-dashboard',
             templateUrl: 'app/components/dashboard/dashboard.component.html',
-            styleUrls: ['app/components/dashboard/dashboard.component.css'],
+            styleUrls: ['app/components/dashboard/dashboard.component.css']
         }), 
         __metadata('design:paramtypes', [train_service_1.TrainService, router_1.Router])
     ], DashboardComponent);
