@@ -1,9 +1,17 @@
 # summerit.frontend
 
-<h2>Tutorials</h2>
+## Getting started
+
+```
+$ git clone https://github.com/knowit/summerit.frontend.git
+$ npm install
+$ npm start
+```
+
+## Tutorials
 
 https://angular.io/docs/ts/latest/tutorial/toh-pt2.html
 
 ## Grid
-https://github.com/BTMorton/angular2-grid
 
+https://github.com/BTMorton/angular2-grid
