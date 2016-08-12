@@ -2,8 +2,7 @@
   <h2>{{train.name}} detaljer!</h2>
   <div><label>id: </label>{{train.id}}</div>
   <div>
-    <label>navn: </label>
-    <input [(ngModel)]="train.name" placeholder="name"/>
+    <label>navn: </label>{{train.name}}
   </div>
   <div><label>Oppdatert: </label>{{train.updated_at | date: "dd. MMM yyyy" }}</div>
   <div><label>Status: </label><status *ngIf="train.status == true">På verkstedet</status><status *ngIf="train.status == false">Ikke på verkstedet</status></div>
